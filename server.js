@@ -1,4 +1,5 @@
 const express = require('express');
+const responseData = require('./response.json'); // Assuming you have a JSON file with response data
 const app = express();
 
 const PORT = 3000;
@@ -7,12 +8,12 @@ app.get('/', (req, res) => {
   res.send('Welcome to your first Express app 🔥');
 });
 
-app.get('/api/android', (req, res) => {
+app.get('/api/downloads', (req, res) => {
   res.json({ 
     success: true,
     statusCode: 200,
-    message: 'Android API endpoint hit',
-    data: { version: '12.0', codename: 'Snow Cone' } 
+    message: 'Downloads API endpoint hit',
+    data: responseData
   });
 });
 
